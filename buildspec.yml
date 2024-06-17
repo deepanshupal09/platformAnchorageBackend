@@ -6,6 +6,7 @@ phases:
       python: 3.9
   pre_build:
     commands:
+      - sudo su
       - echo Authenticating with Amazon ECR…
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 975050137142.dkr.ecr.us-east-1.amazonaws.com
   build:
